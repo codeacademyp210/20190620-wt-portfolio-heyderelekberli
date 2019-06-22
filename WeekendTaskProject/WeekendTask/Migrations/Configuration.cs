@@ -57,9 +57,9 @@ namespace WeekendTask.Migrations
             new Models.Recoment { ID = 2, Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu. Praesent aliquam velit vel libero dictum, non sollicitudin lectus mollis. Morbi sollicitudin auctor gravida.", Name = "Bob Doe",Position= "Director of Engineering" }
             );
             context.Skills.AddOrUpdate(s => s.ID,
-            new Models.Skill { ID = 1, Name = "START UP", Percent = "60%", Flag ="", Country = "ENGLISH", Level = "ADVANCED" },
-            new Models.Skill { ID = 2, Name = "INNOVATION", Percent = "80%", Flag ="", Country = "SPANISH", Level = "ADVANCED" },
-            new Models.Skill { ID = 3, Name = "PRODUCTS", Percent = "70%", Flag ="", Country = "FRENCH", Level ="BASIC" },
+            new Models.Skill { ID = 1, Name = "START UP", Percent = "60%" },
+            new Models.Skill { ID = 2, Name = "INNOVATION", Percent = "80%" },
+            new Models.Skill { ID = 3, Name = "PRODUCTS", Percent = "70%" },
             new Models.Skill { ID = 4, Name = "CSS", Percent = "90%"},
             new Models.Skill { ID = 5, Name = "JAVASCRIPT", Percent = "60%"},
             new Models.Skill { ID = 6, Name = "BUSINESS", Percent = "80%"},

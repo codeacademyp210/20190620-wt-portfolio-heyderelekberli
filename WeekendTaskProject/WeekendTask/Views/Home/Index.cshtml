@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WeekendTask.Models.HomeViewModel
+@{
     ViewBag.Title = "Home Page";
 }
         <div role="main" class="main">
@@ -54,23 +55,17 @@
             <div class="custom-about-me-links bg-color-light">
                 <div class="container">
                     <div class="row justify-content-end">
-                        <div class="col-lg-3 text-center custom-xs-border-bottom p-0">
-                            <a data-hash href="#say-hello" class="text-decoration-none">
-                                <span class="custom-nav-button text-color-dark">
-                                    <i class="icon-earphones-alt icons text-color-primary"></i>
-                                    Contact Information
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 text-center custom-xs-border-bottom p-0">
-                            <a data-hash href="#say-hello" class="text-decoration-none">
-                                <span class="custom-nav-button custom-divisors text-color-dark">
-                                    <i class="icon-envelope-open icons text-color-primary"></i>
-                                    Send Message
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 text-center p-0">
+                        @foreach (var info in Model.Information.Take(2))
+                        {
+                            <div class="col-lg-3 text-center custom-xs-border-bottom p-0">
+                                <a data-hash href="#say-hello" class="text-decoration-none">
+                                    <span class="custom-nav-button text-color-dark">
+                                        <i class="icon-@info.Icon icons text-color-primary"></i>@info.Title
+                                    </span>
+                                </a>
+                            </div>
+                        }
+                        <div class="col-lg-2 text-center p-0">
                             <a href="#" class="text-decoration-none">
                                 <span class="custom-nav-button text-color-dark">
                                     <i class="icon-cloud-download icons text-color-primary"></i>
@@ -86,7 +81,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-
                             <div class="custom-box-details bg-color-light custom-box-shadow-1 col-lg-6 ml-5 mb-5 mb-lg-4 float-right clearfix">
                                 <h4>Personal Details</h4>
                                 <div class="row">
@@ -151,76 +145,33 @@
                             <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Experience</h2>
                             <section class="timeline custom-timeline" id="timeline">
                                 <div class="timeline-body">
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
+                                    @foreach (var exp in Model.Experience)
+                                    {
+                                        <article class="timeline-box right custom-box-shadow-2">
+                                            <div class="row">
+                                                <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
+                                                    <span class="from text-color-dark text-uppercase">
+                                                        From
+                                                        <span class="font-weight-semibold">@exp.From</span>
+                                                    </span>
+                                                    <span class="to text-color-dark text-uppercase">
+                                                        To
+                                                        <span class="font-weight-semibold">@exp.To</span>
+                                                    </span>
+                                                    <p class="text-color-dark">(3 Years 9 Months)</p>
+                                                    <span class="company text-color-dark font-weight-semibold">
+                                                        @exp.Name
+                                                        <span class="company-location text-color-dark font-weight-normal text-uppercase">@exp.City</span>
+                                                    </span>
+                                                </div>
+                                                <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
+                                                    <h4 class="text-color-dark font-weight-semibold">@exp.Title</h4>
+                                                    <p class="custom-text-color-2">@exp.Text</p>
+                                                </div>
                                             </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
-                                            </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-box right custom-box-shadow-2">
-                                        <div class="row">
-                                            <div class="experience-info col-lg-3 col-sm-5 bg-color-primary">
-                                                <span class="from text-color-dark text-uppercase">
-                                                    From
-                                                    <span class="font-weight-semibold">Sep 2012</span>
-                                                </span>
-                                                <span class="to text-color-dark text-uppercase">
-                                                    To
-                                                    <span class="font-weight-semibold">Present</span>
-                                                </span>
-                                                <p class="text-color-dark">(3 Years 9 Months)</p>
-                                                <span class="company text-color-dark font-weight-semibold">
-                                                    Okler Themes
-                                                    <span class="company-location text-color-dark font-weight-normal text-uppercase">Greater New York</span>
-                                                </span>
-                                            </div>
-                                            <div class="experience-description col-lg-9 col-sm-7 bg-color-light">
-                                                <h4 class="text-color-dark font-weight-semibold">Chief Product Officer</h4>
-                                                <p class="custom-text-color-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <div class="timeline-bar"></div>
+                                        </article>
+                                    }
+                                   <div class="timeline-bar"></div>
                                 </div>
                             </section>
                         </div>
@@ -234,60 +185,22 @@
                         <div class="col">
                             <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold m-0">Education</h2>
                             <div class="owl-carousel nav-bottom custom-dots-style-1 mb-0" data-plugin-options="{'items': 1, 'loop': false, 'dots': true, 'nav': false}">
+                                @foreach (var edu in Model.Education.Take(3))
+                                {
                                 <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
+                                    @foreach (var edd in Model.Education.Take(2))
+                                    {
+                                        <div class="col-lg-6 col-sm-6 pb-4">
+                                            <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
+                                                <i class="icon-@edu.Icon icons text-color-primary"></i>
+                                                <h4 class="font-weight-semibold text-color-dark m-0">@edu.Title</h4>
+                                                <p class="custom-text-color-2 mb-1">@edu.Text</p>
+                                                <strong class="text-color-primary">@edu.DateTime</strong>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
+                                    }
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6 pb-4">
-                                        <div class="custom-box-details-2 bg-color-light custom-box-shadow-3">
-                                            <i class="icon-graduation icons text-color-primary"></i>
-                                            <h4 class="font-weight-semibold text-color-dark m-0">Porto University</h4>
-                                            <p class="custom-text-color-2 mb-1">Master of Information Technology</p>
-                                            <strong class="text-color-primary">2001-2017</strong>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -299,66 +212,37 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 col-lg-8 mb-4 mb-md-0">
                             <div class="row">
+
                                 <div class="col-lg-6">
                                     <h2 class="text-color-quaternary text-uppercase font-weight-extra-bold">Skills & Language</h2>
-                                    <div class="progress-bars custom-progress-bars">
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Start Up</span>
-                                        </div>
 
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Innovation</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Products</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>CSS</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
-                                        </div>
+                                    <div class="progress-bars custom-progress-bars">
+                                        @foreach (var skill2 in Model.Skill.Take(4))
+                                        {
+                                            <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                                <span>@skill2.Name</span>
+                                            </div>
+
+                                            <div class="progress mb-2">
+                                                <div class="progress-bar" data-appear-progress-animation="@skill2.Percent"></div>
+                                            </div>
+                                        }
+                                        @foreach (var skill3 in Model.Skill.Take(4))
+                                        {
+                                            <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
+                                                <span>@skill3.Name</span>
+                                            </div>
+
+                                            <div class="progress mb-2">
+                                                <div class="progress-bar" data-appear-progress-animation="@skill3.Percent"></div>
+                                            </div>
+                                        }
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="progress-bars custom-progress-bars custom-md-margin-top-1">
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Javascript</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="60%"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Business</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="80%" data-appear-animation-delay="300"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>E-commerce</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="70%" data-appear-animation-delay="600"></div>
-                                        </div>
-                                        <div class="progress-label text-color-dark font-weight-semibold text-uppercase text-2">
-                                            <span>Creative</span>
-                                        </div>
-                                        <div class="progress mb-2">
-                                            <div class="progress-bar" data-appear-progress-animation="90%" data-appear-animation-delay="900"></div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="row">
                                 <div class="col">
@@ -382,7 +266,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </section>
 

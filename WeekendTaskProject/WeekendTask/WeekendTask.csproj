@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\TempleteContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -135,10 +136,15 @@
     <Compile Include="Migrations\201906221421486_CreateTable.Designer.cs">
       <DependentUpon>201906221421486_CreateTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906222314055_update.cs" />
+    <Compile Include="Migrations\201906222314055_update.Designer.cs">
+      <DependentUpon>201906222314055_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Experience.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Icon.cs" />
     <Compile Include="Models\Information.cs" />
     <Compile Include="Models\Portfolio.cs" />
@@ -293,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -310,6 +317,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906221421486_CreateTable.resx">
       <DependentUpon>201906221421486_CreateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906222314055_update.resx">
+      <DependentUpon>201906222314055_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
