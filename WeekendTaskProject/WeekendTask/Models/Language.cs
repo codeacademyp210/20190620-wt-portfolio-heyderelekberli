@@ -5,9 +5,11 @@ using System.Web;
 
 namespace WeekendTask.Models
 {
-    public class Icon
+    public class Language
     {
         public int ID { get; set; }
-        public string IconName { get; set; }
+        public string Flag { get; set; }
+        public string Country { get; set; }
+        public string Level { get; set; }
     }
 }

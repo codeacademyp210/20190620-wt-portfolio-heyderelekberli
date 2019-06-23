@@ -31,12 +31,7 @@ namespace WeekendTask.Migrations
                 new Models.Experience { ID = 2, From = "Sep 2012", To = "Present", YearsMonth = "(3 YEARS 9 MONTHS)", Name = "Okler Themes", City = "GREATER NEW YORK", Title = "Chief Product Officer", Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu." },
                 new Models.Experience { ID = 3, From = "Sep 2012", To = "Present", YearsMonth = "(3 YEARS 9 MONTHS)", Name = "Okler Themes", City = "GREATER NEW YORK", Title = "Chief Product Officer", Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt nulla tortor, a imperdiet enim tristique nec. Nulla lobortis leo eget metus dapibus sodales. Sed placerat vitae dui vitae vehicula. Quisque in tincidunt ligula, nec dignissim arcu." }
                 );
-            context.Icons.AddOrUpdate(i => i.ID,
-                new Models.Icon { ID = 1, IconName = "envelope"},
-                new Models.Icon { ID = 2, IconName = "phone" },
-                new Models.Icon { ID = 3, IconName = "social-skype" },
-                new Models.Icon { ID = 4, IconName = "share" }
-                );
+        
             context.Informations.AddOrUpdate(inf => inf.ID,
                 new Models.Information { ID = 1, Icon = "earphones-alt", Title = "Contact Information"},
                 new Models.Information { ID = 2, Icon = "envelope-open", Title = "Send Message"},
@@ -60,17 +55,24 @@ namespace WeekendTask.Migrations
             new Models.Skill { ID = 1, Name = "START UP", Percent = "60%" },
             new Models.Skill { ID = 2, Name = "INNOVATION", Percent = "80%" },
             new Models.Skill { ID = 3, Name = "PRODUCTS", Percent = "70%" },
-            new Models.Skill { ID = 4, Name = "CSS", Percent = "90%"},
-            new Models.Skill { ID = 5, Name = "JAVASCRIPT", Percent = "60%"},
-            new Models.Skill { ID = 6, Name = "BUSINESS", Percent = "80%"},
-            new Models.Skill { ID = 7, Name = "E-COMMERCE", Percent = "70%"},
-            new Models.Skill { ID = 8, Name = "CREATIVE", Percent = "90%"}
+            new Models.Skill { ID = 4, Name = "CSS", Percent = "90%"}
+ 
             );
+            context.Skills2.AddOrUpdate(sl => sl.ID,
+         new Models.Skill2 { ID = 1, Name = "JAVASCRIPT", Percent = "60%" },
+         new Models.Skill2 { ID = 2, Name = "BUSINESS", Percent = "80%" },
+         new Models.Skill2 { ID = 3, Name = "E-COMMERCE", Percent = "70%" },
+         new Models.Skill2 { ID = 4, Name = "CREATIVE", Percent = "90%" }
+         );
+            context.Languages.AddOrUpdate(la => la.ID,
+   new Models.Language { ID = 1, Flag = "united-kingdom.svg", Country = "English", Level ="Advanced" },
+   new Models.Language { ID = 2, Flag = "spain.svg", Country = "Spanish", Level ="Advanced" },
+   new Models.Language { ID = 3, Flag = "france.svg", Country = "French", Level ="Basic" }
+   );
             context.Settings.AddOrUpdate(se => se.ID,
             new Models.Setting
             {
                 ID = 1,
-                Image = "me.jpg",
                 Name = "Adam Doe",
                 Speciality = "Chief Product Officer at Okler Themes",
                 Title1 = "GREATER NEW YORK AREA",
@@ -90,8 +92,12 @@ namespace WeekendTask.Migrations
                 GooglePlus = "Google Plus",
                 Foot_Email = "you@domain.com",
                 Foot_Phone = "123-456-7890",
-                Foot_Skype = "yourskype"
-            });
+                Foot_Skype = "yourskype",
+                Envelope = "envelope",
+                PhoneIcon = "phone",
+                SkypeIcon = "social-skype",
+                Share = "share"
+        });
         }
    
     }

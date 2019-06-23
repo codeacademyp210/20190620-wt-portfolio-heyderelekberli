@@ -8,7 +8,6 @@ namespace WeekendTask.Models
     public class Setting
     {
         public int ID { get; set; }
-        public string Image { get; set; }
         public string Name { get; set; }
         public string Speciality { get; set; }
         public string Title1 { get; set; }
@@ -29,5 +28,9 @@ namespace WeekendTask.Models
         public string Foot_Email { get; set; }
         public string Foot_Phone { get; set; }
         public string Foot_Skype { get; set; }
+        public string SkypeIcon { get; set; }
+        public string Envelope { get; set; }
+        public string PhoneIcon { get; set; }
+        public string Share { get; set; }
     }
 }

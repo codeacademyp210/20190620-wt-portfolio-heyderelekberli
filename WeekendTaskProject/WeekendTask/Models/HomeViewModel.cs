@@ -10,11 +10,12 @@ namespace WeekendTask.Models
         public List<Blog> Blog { get; set; }
         public List<Education> Education { get; set; }
         public List<Experience> Experience { get; set; }
-        public List<Icon> Icon { get; set; }
         public List<Information> Information { get; set; }
         public List<Portfolio> Portfolio { get; set; }
         public List<Recoment> Recoment { get; set; }
         public List<Skill> Skill { get; set; }
+        public List<Skill2> Skill2 { get; set; }
+        public List<Language> Language { get; set; }
         public Setting Setting { get; set; }
        
     }

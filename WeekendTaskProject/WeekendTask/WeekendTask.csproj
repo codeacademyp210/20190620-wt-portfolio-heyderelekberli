@@ -126,6 +126,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\TempleteContext.cs" />
@@ -140,17 +142,30 @@
     <Compile Include="Migrations\201906222314055_update.Designer.cs">
       <DependentUpon>201906222314055_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906230904050_createNewTable.cs" />
+    <Compile Include="Migrations\201906230904050_createNewTable.Designer.cs">
+      <DependentUpon>201906230904050_createNewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906231007164_DeleteIconTable.cs" />
+    <Compile Include="Migrations\201906231007164_DeleteIconTable.Designer.cs">
+      <DependentUpon>201906231007164_DeleteIconTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906231012200_deleteImage.cs" />
+    <Compile Include="Migrations\201906231012200_deleteImage.Designer.cs">
+      <DependentUpon>201906231012200_deleteImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
-    <Compile Include="Models\Icon.cs" />
     <Compile Include="Models\Information.cs" />
+    <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Portfolio.cs" />
     <Compile Include="Models\Recoment.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\Skill2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +287,14 @@
     <Content Include="Public\vendor\simple-line-icons\fonts\Simple-Line-Iconsb26c.ttf" />
     <Content Include="Public\vendor\simple-line-icons\fonts\Simple-Line-Iconsb26c.woff" />
     <Content Include="Public\vendor\simple-line-icons\fonts\Simple-Line-Iconsb26c.woff2" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -299,6 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +344,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906222314055_update.resx">
       <DependentUpon>201906222314055_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906230904050_createNewTable.resx">
+      <DependentUpon>201906230904050_createNewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906231007164_DeleteIconTable.resx">
+      <DependentUpon>201906231007164_DeleteIconTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906231012200_deleteImage.resx">
+      <DependentUpon>201906231012200_deleteImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
