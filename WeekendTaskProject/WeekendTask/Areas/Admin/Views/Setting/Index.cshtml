@@ -1,0 +1,169 @@
+﻿@model IEnumerable<WeekendTask.Models.Setting>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speciality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Previous)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Twitter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GooglePlus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foot_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foot_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foot_Skype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkypeIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Envelope)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Share)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speciality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Previous)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marital)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GooglePlus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foot_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foot_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foot_Skype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkypeIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Envelope)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Share)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

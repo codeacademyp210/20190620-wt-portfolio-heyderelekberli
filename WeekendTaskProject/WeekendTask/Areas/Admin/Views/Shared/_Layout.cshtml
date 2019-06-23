@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,11 +20,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+                    <li>@Html.ActionLink("Education", "Index", "Education")</li>
+                    <li>@Html.ActionLink("Experience", "Index", "Experience")</li>
+                    <li>@Html.ActionLink("Information", "Index", "Information")</li>
+                    <li>@Html.ActionLink("Language", "Index", "Language")</li>
+                    <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
+                    <li>@Html.ActionLink("Recoment", "Index", "Recoment")</li>
+                    <li>@Html.ActionLink("Slill", "Index", "Skill")</li>
+                    <li>@Html.ActionLink("Skill2", "Index", "Skill2")</li>
+                    <li>@Html.ActionLink("Setting", "Index", "Setting")</li>
                 </ul>
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -32,9 +41,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
